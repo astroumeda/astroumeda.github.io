@@ -1129,3 +1129,7 @@ section {
   background-color: #37b3ed; /* Darker blue on hover */
   color: #fff; /* Explicitly set the text color to white, in case it's being overridden elsewhere */
 }
+
+.row {
+  margin-bottom: 60px;
+}
