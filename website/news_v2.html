@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News | Your Name</title>
+  <meta name="description" content="News page for an astronomy researcher." />
+  <style>
+    :root {
+      --bg: #07111d;
+      --text: #f5f7fb;
+      --muted: #c8d1de;
+      --line: #223248;
+      --accent: #9fd0ff;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+    header {
+      padding: 56px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1 {
+      line-height: 1.2;
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+    }
+    .item {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .date {
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+    main { padding: 28px 0 56px; }
+    footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p><a href="index_with_photo_v2.html">← Back to Home</a></p>
+      <h1>News</h1>
+      <p>Updates on papers, talks, awards, and positions.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="item">
+      <div class="date">April 2026</div>
+      <p>Add a recent paper, talk, award, or position update here.</p>
+    </div>
+
+    <div class="item">
+      <div class="date">March 2026</div>
+      <p>Presented new results at a conference or workshop.</p>
+    </div>
+
+    <div class="item">
+      <div class="date">February 2026</div>
+      <p>Uploaded a new preprint or started a new collaboration.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Your Name</div>
+  </footer>
+</body>
+</html>

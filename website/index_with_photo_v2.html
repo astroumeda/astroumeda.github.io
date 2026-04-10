@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiroya Umeda | Astronomy Researcher</title>
+  <meta name="description" content="Personal website for an astronomy researcher." />
+  <style>
+    :root {
+      --bg: #07111d;
+      --text: #f5f7fb;
+      --muted: #c8d1de;
+      --line: #223248;
+      --accent: #9fd0ff;
+      --max: 900px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+    header {
+      padding: 48px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    nav {
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+    nav a {
+      margin-right: 16px;
+      color: var(--muted);
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .photo-box {
+      width: 180px;
+      height: 180px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: #0d1726;
+    }
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    h1, h2 {
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.35rem; }
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+    .lead {
+      font-size: 1.06rem;
+      max-width: 680px;
+    }
+    .links { margin-top: 18px; }
+    .links a {
+      display: inline-block;
+      margin-right: 16px;
+      margin-bottom: 8px;
+    }
+    main { padding: 28px 0 56px; }
+    section {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    li { margin-bottom: 10px; }
+    .year {
+      color: var(--text);
+      font-weight: 600;
+    }
+    .more {
+      margin-top: 12px;
+    }
+    .more a {
+      color: var(--text);
+    }
+    footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 640px) {
+      h1 { font-size: 2rem; }
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .photo-box {
+        width: 140px;
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+        <a href="blog_v2.html">Blog</a>
+      </nav>
+
+      <div class="hero">
+        <div class="photo-box">
+          <img src="profile.jpg" alt="Portrait of Hiroya Umeda">
+        </div>
+
+        <div>
+          <h1>Hiroya Umeda</h1>
+          <p class="lead">
+            Astronomy researcher working on the high-redshift universe, galaxy evolution, and cosmic reionization.
+          </p>
+          <p>
+            Ph.D. / Postdoctoral Researcher<br>
+            Center for Computational Sciences, University of Tsukuba
+          </p>
+
+          <div class="links">
+            <a href="#">CV</a>
+            <a href="#">ORCID</a>
+            <a href="#">X</a>
+            <a href="https://github.com/astroumeda/astroumeda.github.io">GitHub</a>
+            <a href="mailto:ume@icrr.u-tokyo.ac.jp">Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I study how galaxies formed and evolved in the early universe. My work focuses on spectroscopy,
+        deep surveys, and the intergalactic medium.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <ul>
+        <li>Cosmic reionization</li>
+        <li>High-redshift galaxies</li>
+        <li>Galaxy formation and evolution</li>
+      </ul>
+      <p class="more"><a href="research_v2.html">View research details →</a></p>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+      <ul>
+        <li><span class="year">2026</span> — Add a recent paper, talk, or award here.</li>
+        <li><span class="year">2025</span> — Presented new results at a conference.</li>
+        <li><span class="year">2025</span> — Uploaded a new preprint.</li>
+      </ul>
+      <p class="more"><a href="news_v2.html">View all news →</a></p>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <ul>
+        <li>Umeda, H., et al., (2026b), Paper title, <em>The Astrophysical Journal</em></li>
+        <li>Umeda, H., et al., (2026a), Paper title, <em>The Astrophysical Journal</em></li>
+        <li>Umeda, H., et al., (2025), Paper title, <em>The Astrophysical Journal, Supplement Series</em></li>
+        <li>Umeda, H., et al., (2024), Paper title, <em>The Astrophysical Journal</em></li>
+        <li>Umeda, H., et al., (2022), Paper title, <em>The Astrophysical Journal</em></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Hiroya Umeda<br>
+        Center for Computational Sciences<br>
+        University of Tsukuba
+      </p>
+      <p>Email: <a href="mailto:ume@icrr.u-tokyo.ac.jp">ume_at_icrr.u-tokyo.ac.jp</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Hiroya Umeda</div>
+  </footer>
+</body>
+</html>

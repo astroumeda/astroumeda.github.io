@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV | Your Name</title>
+  <meta name="description" content="Curriculum Vitae of an astronomy researcher." />
+  <style>
+    :root {
+      --bg: #07111d;
+      --text: #f5f7fb;
+      --muted: #c8d1de;
+      --line: #223248;
+      --accent: #9fd0ff;
+      --max: 780px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+    header {
+      padding: 56px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1, h2 {
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.2rem; margin-top: 28px; }
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+    main { padding: 28px 0 56px; }
+    section {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .item {
+      margin-bottom: 14px;
+    }
+    .year {
+      color: var(--text);
+      font-weight: 600;
+    }
+    footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p><a href="index_with_photo_v2.html">← Back to Home</a></p>
+      <h1>Curriculum Vitae</h1>
+      <p>Detailed academic CV.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section>
+      <h2>Education</h2>
+      <div class="item"><span class="year">2021–2026</span> — PhD in Physics, University Name</div>
+      <div class="item"><span class="year">2017–2021</span> — BSc in Physics, University Name</div>
+    </section>
+
+    <section>
+      <h2>Positions</h2>
+      <div class="item"><span class="year">2026–</span> — Postdoctoral Researcher, Institution</div>
+      <div class="item"><span class="year">2021–2026</span> — PhD Candidate, Institution</div>
+    </section>
+
+    <section>
+      <h2>Publications</h2>
+      <div class="item">Your Name et al. (2026), Journal</div>
+      <div class="item">Your Name et al. (2025), Journal</div>
+    </section>
+
+    <section>
+      <h2>Talks</h2>
+      <div class="item"><span class="year">2026</span> — Conference name, Talk title</div>
+      <div class="item"><span class="year">2025</span> — Seminar, Talk title</div>
+    </section>
+
+    <section>
+      <h2>Awards</h2>
+      <div class="item"><span class="year">2026</span> — Award name</div>
+      <div class="item"><span class="year">2025</span> — Fellowship / grant</div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="item">Python, data analysis, spectroscopy, modeling</div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Your Name</div>
+  </footer>
+</body>
+</html>

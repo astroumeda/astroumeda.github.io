@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Your Name</title>
+  <meta name="description" content="Blog page for an astronomy researcher." />
+  <style>
+    :root {
+      --bg: #07111d;
+      --text: #f5f7fb;
+      --muted: #c8d1de;
+      --line: #223248;
+      --accent: #9fd0ff;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+    header {
+      padding: 56px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1, h2 {
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.2rem; }
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+    main { padding: 28px 0 56px; }
+    article {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .date {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p><a href="index_with_photo_v2.html">← Back to Home</a></p>
+      <h1>Blog</h1>
+      <p>Notes, research updates, and short essays.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article>
+      <div class="date">April 2026</div>
+      <h2>First Post Title</h2>
+      <p>
+        Write your post here. Duplicate this block whenever you want to add a new article.
+      </p>
+    </article>
+
+    <article>
+      <div class="date">March 2026</div>
+      <h2>Another Post Title</h2>
+      <p>
+        This page is intentionally simple so it is easy to manage on GitHub.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Your Name</div>
+  </footer>
+</body>
+</html>
