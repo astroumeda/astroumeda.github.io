@@ -31,6 +31,17 @@
     }
   }
 
+  // ---------------------------------------------------------------- other copy buttons (e.g. feed URL)
+  document.querySelectorAll(".copy-btn[data-copy]").forEach((btn) => {
+    if (!navigator.clipboard) return;
+    btn.hidden = false;
+    btn.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      btn.textContent = "Copied ✓";
+      setTimeout(() => (btn.textContent = "Copy"), 1600);
+    });
+  });
+
   // ---------------------------------------------------------------- hero starfield
   // Twinkling stars that drift slightly with the mouse. Stars are drawn in the
   // text colour, so they show in both light and dark mode.

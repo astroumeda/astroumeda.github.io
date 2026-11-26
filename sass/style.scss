@@ -436,6 +436,7 @@ kbd {
 .footer-links { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; }
 .email-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
 .email-link { font-size: 16px; }
+.feed-url { font-size: 15px; padding: 6px 12px; border-radius: 8px; background: var(--accent-soft); color: var(--text); word-break: break-all; }
 .copy-btn {
   font: 500 12.5px "Inter", sans-serif; color: var(--text-2); background: var(--bg-alt);
   border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; cursor: pointer;

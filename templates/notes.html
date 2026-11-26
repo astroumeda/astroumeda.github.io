@@ -21,7 +21,7 @@
     {% endif %}
     {% set tags = get_taxonomy(kind="tags") %}
     <p class="muted small">{% if tags.items %}Tags: {% for t in tags.items %}<a class="tag" href="{{ t.permalink }}">#{{ t.name }}</a> {% endfor %}
-      · {% endif %}<a href="{{ get_url(path='atom.xml') }}">Subscribe (Atom)</a></p>
+      · {% endif %}<a href="{{ get_url(path='@/feed.md') }}">Subscribe</a></p>
   </div>
 </section>
 {% endblock content %}

@@ -2,6 +2,7 @@ base_url = "https://astroumeda.github.io"
 title = "Hiroya Umeda"
 description = "Hiroya Umeda (梅田滉也) — astronomer studying cosmic reionization and galaxy / black hole formation using big data from JWST, Subaru and VLT, statistical inference, simulations and theoretical models."
 default_language = "en"
+author = "Hiroya Umeda"
 
 compile_sass = true
 minify_html = true
