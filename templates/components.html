@@ -1,0 +1,64 @@
+{# Reusable pieces. Zola registers every component globally, so no import is needed.
+   Use them as {{<pic path="img/x.png" width={400} />}}. #}
+
+{# Responsive WebP image, resized at build time by Zola. `path` is under static/. #}
+{% component pic(path: string, width: integer, alt: string = "", cls: string = "", sizes: string = "100vw", lazy: bool = true) %}
+  {%- set small = resize_image(path=path, width=width, op="fit_width", format="webp", quality=82) -%}
+  {%- set large = resize_image(path=path, width=width * 2, op="fit_width", format="webp", quality=78) -%}
+  <img class="{{ cls }}" src="{{ small.url }}" srcset="{{ small.url }} {{ small.width }}w, {{ large.url }} {{ large.width }}w"
+       sizes="{{ sizes }}" width="{{ small.width }}" height="{{ small.height }}" alt="{{ alt }}" {% if lazy %}loading="lazy" decoding="async"{% else %}fetchpriority="high"{% endif %}>
+{% endcomponent pic %}
+
+{% component paper(p) %}
+  <li class="paper">
+    <a class="paper-title" href="{{ p.url }}">{{ p.title }}</a>
+    <div class="paper-meta">
+      <span>{{ p.authors | replace(from="Umeda", to="<strong>Umeda</strong>") | safe }}</span>
+      <span class="dot">·</span>
+      <span>{{ p.journal }}</span>
+      <span class="dot">·</span>
+      <span>{{ p.year }}</span>
+    </div>
+  </li>
+{% endcomponent paper %}
+
+{% component event(e) %}
+  <li class="event">
+    <span class="event-date">{{ e.date }}</span>
+    <span class="event-body">
+      {%- if e?.kind %}<span class="badge{% if "Invited" in e.kind %} badge-accent{% endif %}">{{ e.kind }}</span> {% endif -%}
+      <span class="event-name">{{ e.event }}</span>
+      <span class="event-place">{{ e.place }}</span>
+    </span>
+  </li>
+{% endcomponent event %}
+
+{# One News entry. `p` is a Zola page from content/news/. #}
+{% component news_item(p) %}
+  <li class="news-item">
+    <time class="news-date" datetime="{{ p.date }}">{{ p.date | date(format="%b %Y") }}</time>
+    <span class="news-kind kind-{{ p.extra?.kind or 'misc' }}" title="{{ p.extra?.kind or 'news' }}"></span>
+    <div class="news-body">
+      {%- if p.extra?.link -%}
+        <a href="{{ p.extra.link }}">{{ p.title }}</a>
+      {%- else -%}
+        <span>{{ p.title }}</span>
+      {%- endif -%}
+      {% if p.content | trim %}<div class="news-more">{{ p.content | safe }}</div>{% endif %}
+    </div>
+  </li>
+{% endcomponent news_item %}
+
+{# One note in a list. `p` is a Zola page from content/notes/. #}
+{% component note_card(p) %}
+  <li class="note-card">
+    <a class="note-link" href="{{ p.permalink }}">
+      <time datetime="{{ p.date }}">{{ p.date | date(format="%b %-d, %Y") }}</time>
+      <span class="note-title">{{ p.title }}</span>
+      {% if p.description %}<span class="note-desc">{{ p.description }}</span>{% endif %}
+    </a>
+  </li>
+{% endcomponent note_card %}
+
+{# Display math for notes: {% <math> %} \int ... {% </math> %}. Rendered by KaTeX in the browser. #}
+{% component math() %}<div class="math-display">\[{{ body | trim }}\]</div>{% endcomponent math %}
