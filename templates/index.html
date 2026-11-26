@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block content %}
+{%- set research = load_data(path="data/research.toml") -%}
+{%- set papers = load_data(path="data/papers.toml") -%}
+{%- set cv = load_data(path="data/cv.toml") -%}
+{%- set x = section.extra -%}
+{%- set news = get_section(path="news/_index.md") -%}
+{%- set notes = get_section(path="notes/_index.md") -%}
+
+<!-- ============================ Hero -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    {{<pic path={x.hero_image} width={1024} sizes="100vw" lazy={false} />}}
+  </div>
+  <canvas class="starfield" aria-hidden="true"></canvas>
+  <a class="hero-credit" href="{{ x.hero_image_link }}">{{ x.hero_image_credit }}</a>
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">{{ config.extra.position }} · {{ config.extra.affiliation }}</p>
+      <h1>{{ config.extra.name }} <span class="name-ja" lang="ja">{{ config.extra.name_ja }}</span></h1>
+      <p class="lead">{{ x.tagline }}</p>
+      <p class="im-a" aria-label="I'm {{ x.im_a | join(sep=', ') }}">I'm <span class="rotator" data-words="{{ x.im_a | join(sep='|') }}">{{ x.im_a[0] }}</span><span class="caret" aria-hidden="true"></span></p>
+      <div class="link-row">
+        {% for l in config.extra.links %}
+          <a class="pill" href="{{ l.url }}">{{ l.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="orbit" aria-hidden="true"><span class="planet"></span></div>
+      {{<pic path="img/myface.jpg" width={280} alt={"Portrait of " ~ config.extra.name} cls="avatar" sizes="280px" lazy={false} />}}
+    </div>
+  </div>
+</section>
+
+<!-- ============================ About -->
+<section id="about" class="section">
+  <div class="wrap grid-about">
+    <div>
+      <h2 class="section-title">About</h2>
+      <p class="greeting"><span lang="ja">{{ x.greeting }}</span></p>
+      <div class="prose">{{ section.content | safe }}</div>
+    </div>
+    <figure class="about-photo">
+      {{<pic path={x.photo} width={520} alt={"Presentation at " ~ x.photo_caption} sizes="(min-width: 860px) 400px, 100vw" />}}
+      <figcaption>{{ x.photo_caption }}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ Latest -->
+<section id="latest" class="section section-tight">
+  <div class="wrap latest">
+    <div>
+      <div class="title-row">
+        <h2 class="section-title">News</h2>
+        <a class="more" href="{{ news.permalink }}">All news →</a>
+      </div>
+      <ul class="news-list">
+        {% for p in news.pages[:4] %}{{<news_item p={p} />}}{% endfor %}
+      </ul>
+    </div>
+    <div>
+      <div class="title-row">
+        <h2 class="section-title">Notes</h2>
+        <a class="more" href="{{ notes.permalink }}">All notes →</a>
+      </div>
+      {% if notes.pages %}
+      <ul class="note-list">
+        {% for p in notes.pages[:3] %}{{<note_card p={p} />}}{% endfor %}
+      </ul>
+      {% else %}
+      <p class="empty muted">The first note is still in the telescope queue. ✦</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<div class="forest" aria-hidden="true" title="A mock Lyα forest"></div>
+
+<!-- ============================ Research -->
+<section id="research" class="section section-alt">
+  <div class="wrap">
+    <h2 class="section-title">Research</h2>
+    <p class="section-lead">{{ x.research_intro }}</p>
+
+    {% set o = research.overview %}
+    <article class="overview">
+      {{<pic path={o.image} width={560} alt={o.title} sizes="(min-width: 860px) 480px, 100vw" />}}
+      <div>
+        <h3>{{ o.title }}</h3>
+        <p>{{ o.text }}</p>
+      </div>
+    </article>
+
+    <div class="cards">
+      {% for t in research.topics %}
+      <article class="card">
+        <div class="card-media">
+          {{<pic path={t.image} width={520} alt={"Figure: " ~ t.title} sizes="(min-width: 860px) 480px, 100vw" />}}
+        </div>
+        <div class="card-body">
+          <div class="tags">{% for tag in t.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
+          <h3>{{ t.title }}</h3>
+          <p>{{ t.text }}</p>
+          {% if t?.paper %}<a class="more" href="{{ t.paper }}">Read the paper →</a>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============================ Publications -->
+<section id="publications" class="section">
+  <div class="wrap">
+    <h2 class="section-title">Publications</h2>
+    <p class="section-lead">Selected papers. The full list is on <a href="{{ papers.ads_query }}">NASA/ADS</a>.</p>
+
+    <h3 class="sub">First author</h3>
+    <ol class="papers">
+      {% for p in papers.first_author %}{{<paper p={p} />}}{% endfor %}
+    </ol>
+
+    <h3 class="sub">Co-authored</h3>
+    <ol class="papers">
+      {% for p in papers.co_authored[:6] %}{{<paper p={p} />}}{% endfor %}
+    </ol>
+    {% if papers.co_authored | length > 6 %}
+    <details class="more-events">
+      <summary>Show all {{ papers.co_authored | length }} co-authored papers</summary>
+      <ol class="papers" start="7">
+        {% for p in papers.co_authored[6:] %}{{<paper p={p} />}}{% endfor %}
+      </ol>
+    </details>
+    {% endif %}
+  </div>
+</section>
+
+<div class="forest" aria-hidden="true"></div>
+
+<!-- ============================ CV -->
+<section id="cv" class="section section-alt">
+  <div class="wrap">
+    <div class="title-row">
+      <h2 class="section-title">CV</h2>
+      <a class="pill pill-solid" href="{{ get_url(path='assets/pdf/CV_Umeda.pdf') }}">Full CV (PDF)</a>
+    </div>
+
+    <div class="cv-grid">
+      <div>
+        <h3 class="sub">Positions</h3>
+        <ul class="timeline">
+          {% for e in cv.positions %}
+          <li><span class="when">{{ e.period }}</span><div><strong>{{ e.title }}</strong><div>{{ e.place }}</div>{% if e?.note %}<div class="muted">{{ e.note }}</div>{% endif %}</div></li>
+          {% endfor %}
+        </ul>
+
+        <h3 class="sub">Education</h3>
+        <ul class="timeline">
+          {% for e in cv.education %}
+          <li><span class="when">{{ e.period }}</span><div><strong>{{ e.title }}</strong><div>{{ e.place }}</div>{% if e?.note %}<div class="muted">{{ e.note }}</div>{% endif %}</div></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="sub">Fellowships &amp; awards</h3>
+        <ul class="plain">
+          {% for a in cv.awards %}<li><span>{{ a.name }}</span><span class="muted">{{ a.year }}</span></li>{% endfor %}
+        </ul>
+
+        <h3 class="sub">Grants</h3>
+        <ul class="plain">
+          {% for g in cv.grants %}<li><span>{{ g.name }} <span class="muted">· {{ g.amount }}</span></span><span class="muted">{{ g.year }}</span></li>{% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub">Talks
+      <span class="count">{{ cv.talks.total_talks }} talks · {{ cv.talks.total_seminars }} seminars · {{ cv.talks.total_posters }} posters</span>
+    </h3>
+    {% set n = 6 %}
+    <ul class="events">
+      {% for e in cv.talks.items[:n] %}{{<event e={e} />}}{% endfor %}
+    </ul>
+    <details class="more-events">
+      <summary>Show more talks, seminars and posters</summary>
+      <ul class="events">
+        {% for e in cv.talks.items[n:] %}{{<event e={e} />}}{% endfor %}
+      </ul>
+      <h4 class="sub-sm">Seminars</h4>
+      <ul class="events">{% for e in cv.seminars %}{{<event e={e} />}}{% endfor %}</ul>
+      <h4 class="sub-sm">Posters</h4>
+      <ul class="events">{% for e in cv.posters %}{{<event e={e} />}}{% endfor %}</ul>
+    </details>
+  </div>
+</section>
+
+<!-- ============================ Contact -->
+<section id="contact" class="section">
+  <div class="wrap contact">
+    <div>
+      <h2 class="section-title">Contact</h2>
+      <p class="section-lead">Inquiries about my research are always welcome. Please include your name and position in the email.</p>
+    </div>
+    <dl class="contact-list">
+      <dt>Email</dt>
+      {%- set em = config.extra.email | split(pat="_at_") %}
+      <dd class="email-row">
+        {# Written as "user_at_domain" in the HTML; site.js turns it into a mailto link, so simple crawlers can't harvest it. #}
+        <a class="mono email-link" href="{{ get_url(path='/') }}#contact" data-user="{{ em[0] }}" data-domain="{{ em[1] }}">{{ config.extra.email }}</a>
+        <button class="copy-btn" type="button" hidden>Copy</button>
+      </dd>
+      <dt>Office</dt>
+      <dd>{{ config.extra.address }} <a href="{{ config.extra.map_url }}">Map ↗</a></dd>
+    </dl>
+  </div>
+</section>
+{% endblock content %}

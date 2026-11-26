@@ -1,0 +1,76 @@
+# Publications. Edit by hand (copy a block to the top of its list), or regenerate
+# everything from NASA/ADS with `site papers sync` (see README).
+# "Umeda" in `authors` is highlighted automatically.
+
+ads_query = "https://ui.adsabs.harvard.edu/search/q=author%3A%22Umeda%2C%20Hiroya%22&sort=date%20desc%2C%20bibcode%20desc&p_=0"
+
+# Used by `site papers sync`. "=" asks ADS for an exact name match, so papers by other
+# "Umeda, H." authors are not pulled in. Using your ORCID instead is even more robust:
+#   query = 'orcid:0000-0000-0000-0000 (property:refereed OR doctype:eprint)'
+[sync]
+query = 'author:"=Umeda, Hiroya" (property:refereed OR doctype:eprint)'
+surname = "Umeda"
+exclude = []   # bibcodes to hide
+
+[[first_author]]
+authors = "Umeda et al."
+title = "Gas-Phase Metallicity and Nitrogen Abundances in Low-Mass Galaxies Down to M★ ≃ 10^6.6 M☉ at z ≃ 4.5–9.8 from JWST Lensing Cluster Surveys"
+journal = "ApJ, accepted (arXiv:2607.15515)"
+year = 2026
+url = "https://arxiv.org/abs/2607.15515"
+
+[[first_author]]
+authors = "Umeda et al."
+title = "A Black Hole Envelope Interpretation for Cosmological Demographics of Little Red Dots"
+journal = "ApJ, 999, 183"
+year = 2026
+url = "https://ui.adsabs.harvard.edu/abs/2026ApJ...999..183U/abstract"
+
+[[first_author]]
+authors = "Umeda et al."
+title = "Probing the Cosmic Reionization History with JWST: Gunn-Peterson and Lyα Damping Wing Absorption at 4.5 < z < 13"
+journal = "ApJ, 997, 86"
+year = 2026
+url = "https://ui.adsabs.harvard.edu/abs/2026ApJ...997...86U/abstract"
+
+[[first_author]]
+authors = "Umeda et al."
+title = "SILVERRUSH. XIV. Lyα Luminosity Functions and Angular Correlation Functions from ~20,000 Lyα Emitters at z ~ 2.2–7.3 from up to 24 deg² HSC-SSP and CHORUS Surveys: Linking the Postreionization Epoch to the Heart of Reionization"
+journal = "ApJS, 277, 37"
+year = 2025
+url = "https://ui.adsabs.harvard.edu/abs/2025ApJS..277...37U/abstract"
+
+[[first_author]]
+authors = "Umeda et al."
+title = "JWST Measurements of Neutral Hydrogen Fractions and Ionized Bubble Sizes at z = 7–12 Obtained with Lyα Damping Wing Absorptions in 27 Bright Continuum Galaxies"
+journal = "ApJ, 971, 124"
+year = 2024
+url = "https://ui.adsabs.harvard.edu/abs/2024ApJ...971..124U/abstract"
+
+[[first_author]]
+authors = "Umeda et al."
+title = "EMPRESS. VII. Ionizing Spectrum Shapes of Extremely Metal-Poor Galaxies: Uncovering the Origins of Strong He II and the Impact on Cosmic Reionization"
+journal = "ApJ, 930, 37"
+year = 2022
+url = "https://ui.adsabs.harvard.edu/abs/2022ApJ...930...37U/abstract"
+
+[[co_authored]]
+authors = "Hatano, Ouchi, Umeda et al."
+title = "EMPRESS. XIV. Strong High Ionization Lines of Young Galaxies at z = 0–8; Ionizing Spectra Consistent with the Intermediate Mass Black Holes with M_BH ~ 10³–10⁶ M_☉"
+journal = "ApJ, 966, 170"
+year = 2024
+url = "https://ui.adsabs.harvard.edu/abs/2023arXiv230502189H/abstract"
+
+[[co_authored]]
+authors = "Kikuta, Ouchi, Shibuya, Liang, Umeda et al."
+title = "SILVERRUSH. XIII. A Catalog of 20,567 Lyα Emitters at z = 2–7 Identified in the Full-depth Data of the Subaru/HSC-SSP and CHORUS Surveys"
+journal = "ApJS, 268, 24"
+year = 2023
+url = "https://ui.adsabs.harvard.edu/abs/2023ApJS..268...24K/abstract"
+
+[[co_authored]]
+authors = "Harikane, Nakajima, Ouchi, Umeda et al."
+title = "Pure Spectroscopic Constraints on UV Luminosity Functions and Cosmic Star Formation History From 25 Galaxies at z = 8.61–13.20 Confirmed with JWST/NIRSpec"
+journal = "arXiv:2304.06658"
+year = 2023
+url = "https://ui.adsabs.harvard.edu/abs/2023arXiv230406658H/abstract"

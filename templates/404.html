@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Not found · {{ config.title }}{% endblock title %}
+{% block content %}
+<section class="section page-head lost">
+  <div class="wrap narrow">
+    <p class="lost-z mono">z = 1100</p>
+    <h2>404 — this page is behind the CMB.</h2>
+    <p class="section-lead">The photons from here haven't decoupled yet. Try somewhere at lower redshift:</p>
+    <p class="link-row">
+      <a class="pill" href="{{ get_url(path='/') }}">Home</a>
+      <a class="pill" href="{{ get_url(path='@/news/_index.md') }}">News</a>
+      <a class="pill" href="{{ get_url(path='@/notes/_index.md') }}">Notes</a>
+    </p>
+  </div>
+</section>
+{% endblock content %}

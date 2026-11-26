@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} · {{ config.title }}{% endblock title %}
+{% block content %}
+<section class="section page-head">
+  <div class="wrap narrow">
+    <a class="back" href="{{ get_url(path='@/news/_index.md') }}">← All news</a>
+    <ul class="news-list">{{<news_item p={page} />}}</ul>
+  </div>
+</section>
+{% endblock content %}

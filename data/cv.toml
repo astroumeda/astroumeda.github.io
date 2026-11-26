@@ -1,0 +1,202 @@
+# Positions, education, talks, grants and awards. Newest first.
+
+[[positions]]
+period = "2026–"
+title = "Postdoctoral Researcher"
+place = "Center for Computational Sciences, University of Tsukuba, Japan"
+note = "Host: Prof. H. Yajima"
+
+# [[positions]]
+# period = "2026–"
+# title = "Postdoctoral Researcher"
+# place = "ITP, University of Heidelberg, Germany"
+# note = "Host: Dr. S. Bosman"
+
+[[education]]
+period = "2023–2026"
+title = "Ph.D."
+place = "The University of Tokyo, Japan"
+note = "Advisor: Prof. M. Ouchi · Thesis: “Statistical Study on Cosmic Reionization with Subaru/HSC Imaging and JWST/NIRSpec Spectroscopic Data” (School of Science Research Award)"
+
+[[education]]
+period = "2021–2023"
+title = "M.Sc."
+place = "The University of Tokyo, Japan"
+note = "Advisor: Prof. M. Ouchi · Thesis: “Cosmic Reionization History and Sources Probed by Optical Imaging and Spectroscopy with the Subaru Telescope”"
+
+[[education]]
+period = "2017–2021"
+title = "B.Sc. in Physics"
+place = "The University of Tokyo, Japan"
+
+# ---------------------------------------------------------------- talks
+[talks]
+total_talks = 29
+total_posters = 2
+total_seminars = 11
+
+[[talks.items]]
+kind = "Contributed"
+event = "GalFirenze"
+place = "Istituto degli Innocenti, Florence, Italy"
+date = "Jun 2026"
+
+[[talks.items]]
+kind = "Invited"
+event = "Post C2C Workshop"
+place = "Tokyo Yaesu Academic Commons, Tokyo, Japan"
+date = "Apr 2026"
+
+[[talks.items]]
+kind = "LOC / Contributed"
+event = "Towards the Full Bloom of First Star, Galaxy, and Black Hole Formation Exploration: JWST + Multi-Facility Observations and Theory for Future Programs"
+place = "Shinjuku L Tower, Tokyo, Japan"
+date = "Apr 2026"
+
+[[talks.items]]
+kind = "Invited"
+event = "Super Distant Galaxy Workshop"
+place = "Tokinosu Resort, Gotenba, Japan"
+date = "Feb 2026"
+
+[[talks.items]]
+event = "Kaba Kada: Exploring the First Billion Years of the Universe"
+place = "Port Douglas, Australia"
+date = "Sep 2025"
+
+[[talks.items]]
+kind = "Invited"
+event = "Exploring Extreme Transients: Frontiers in the Early Universe and Time-Domain Astronomy"
+place = "YITP, Kyoto, Japan"
+date = "Aug 2025"
+
+[[talks.items]]
+event = "Escape of Lyman Radiation from Galactic Labyrinths"
+place = "OAC, Crete, Greece"
+date = "Apr 2025"
+
+[[talks.items]]
+event = "First Galaxies: Building Blocks of Galaxies Across"
+place = "University of Oxford, U.K."
+date = "Apr 2025"
+
+[[talks.items]]
+event = "Kochel CLAW"
+place = "Kochel, Germany"
+date = "Sep 2024"
+
+[[talks.items]]
+event = "First Stars VII"
+place = "Flatiron Institute, New York, U.S."
+date = "May 2024"
+
+[[talks.items]]
+event = "ELT Science in Light of JWST"
+place = "UCLA, Los Angeles, U.S."
+date = "Dec 2023"
+
+[[talks.items]]
+event = "Resolving the Extragalactic Universe with ALMA & JWST"
+place = "Waseda University, Tokyo, Japan"
+date = "Nov 2023"
+
+[[talks.items]]
+kind = "Invited"
+event = "Understanding the Epoch of Reionization"
+place = "Sexten Center for Astrophysics, Sesto, Italy"
+date = "Mar 2023"
+
+[[talks.items]]
+event = "SAZERAC SIPS: Early Galaxy Formation Near and Far"
+place = "Online"
+date = "Dec 2021"
+
+[[seminars]]
+kind = "Invited"
+event = "HEA Seminar"
+place = "ICRR, Kashiwa, Japan"
+date = "Nov 2024"
+
+[[seminars]]
+event = "Galaxies Group Discussion Seminar"
+place = "KICC, Cambridge, U.K."
+date = "Oct 2024"
+
+[[seminars]]
+event = "Coffee Talk"
+place = "University of Edinburgh, U.K."
+date = "Oct 2024"
+
+[[seminars]]
+event = "Seminar Talk"
+place = "University of Heidelberg, Germany"
+date = "Sep 2024"
+
+[[seminars]]
+event = "Seminar Talk"
+place = "UC Santa Cruz, U.S."
+date = "May 2024"
+
+[[posters]]
+event = "The 52nd Saas-Fee Advanced Course"
+place = "Les Diablerets, Switzerland"
+date = "Mar 2023"
+
+[[posters]]
+event = "FoPM Symposium"
+place = "The University of Tokyo, Japan"
+date = "Feb 2023"
+
+# ---------------------------------------------------------------- funding
+[[grants]]
+name = "Yukio Hayakawa Fund Travel Grant"
+amount = "JPY 390,903"
+year = "2026"
+
+[[grants]]
+name = "Special Grant-in-Aid for JSPS Fellows"
+amount = "JPY 360,000"
+year = "2025–2026"
+
+[[grants]]
+name = "JSPS Research Grant"
+amount = "JPY 3,000,000"
+year = "2023–2026"
+
+[[grants]]
+name = "ILR Travel Grant"
+amount = "JPY 516,431"
+year = "2024"
+
+[[grants]]
+name = "SUPER-IRNET Travel Grant"
+amount = "JPY 920,333"
+year = "2023"
+
+[[awards]]
+name = "The University of Tokyo School of Science Research Award"
+year = "2026"
+
+[[awards]]
+name = "ICRR President's Award"
+year = "2026"
+
+[[awards]]
+name = "JSPS PD Fellowship (declined)"
+year = "2026"
+
+[[awards]]
+name = "FoPM Final Exam Excellence Award"
+year = "2025"
+
+[[awards]]
+name = "FoPM Qualification Exam Excellence Award"
+year = "2025"
+
+[[awards]]
+name = "JSPS DC1 Fellowship"
+year = "2023–2026"
+
+[[awards]]
+name = "FoPM Fellowship"
+year = "2021–2026"

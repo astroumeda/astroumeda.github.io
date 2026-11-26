@@ -1,0 +1,66 @@
+# Research topics shown on the home page.
+# The first entry ([overview]) is shown large; [[topics]] are shown as cards in this order.
+# `image` is a path under static/. `paper` (optional) links to the main paper on ADS.
+
+[overview]
+title = "Cosmic Reionization and Galaxy / Black Hole Formation"
+image = "img/firststar.png"
+text = """
+Cosmic reionization is the last phase change of our universe, ending around redshift 5.
+With the onset of the first light — stars and galaxies — ionizing photons from baryonic structures ionize the intergalactic neutral hydrogen.
+This cosmic-scale phenomenon imprints the formation of the first stars as well as the evolution of cosmic structures.
+My goal is to fully capture this event in the context of structure formation through observations.
+"""
+
+[[topics]]
+title = "Galaxy Continuum Damping Wing Analysis with JWST"
+image = "img/stack_v9.png"
+tags = ["JWST", "Reionization"]
+paper = "https://ui.adsabs.harvard.edu/abs/2024ApJ...971..124U/abstract"
+text = """
+Using the James Webb Space Telescope, we detect a redshift evolution of the galaxy spectrum shape around the Lyman break.
+The softening of the break at higher redshift indicates an increasing Lyα optical depth caused by cosmic reionization.
+"""
+
+[[topics]]
+title = "Lyα Emitters with the Subaru Telescope"
+image = "img/lyalf.png"
+tags = ["Subaru/HSC", "Clustering"]
+paper = "https://ui.adsabs.harvard.edu/abs/2025ApJS..277...37U/abstract"
+text = """
+I use Subaru Hyper Suprime-Cam observations to study Lyα emitters in the high-redshift universe.
+Their luminosity functions and angular correlation functions constrain physical properties such as typical host halo masses,
+while the attenuation of Lyα by intergalactic neutral hydrogen probes the state of reionization.
+"""
+
+[[topics]]
+title = "Constraining the Reionization History"
+image = "img/reion_hist.png"
+tags = ["Reionization", "IGM"]
+paper = "https://ui.adsabs.harvard.edu/abs/2026ApJ...997...86U/abstract"
+text = """
+From Lyα observations of high-redshift galaxies I infer the neutral hydrogen fraction of the intergalactic medium.
+Reionization proceeds rapidly around z ∼ 7 — a late and accelerated transition that is hard to explain with standard galaxy-driven scenarios alone.
+"""
+
+[[topics]]
+title = "Cosmological Demographics of Little Red Dots"
+image = "img/bhad.png"
+tags = ["JWST", "Black holes"]
+paper = "https://ui.adsabs.harvard.edu/abs/2026ApJ...999..183U/abstract"
+text = """
+Modeling Little Red Dots with a black hole envelope scenario, I show their emission is well described by blackbody radiation,
+giving bolometric luminosities 1–2 orders of magnitude lower than previously inferred.
+Their luminosity function, black hole mass function and accretion rate density then become consistent with known AGN populations,
+suggesting they trace a key phase of rapid black hole growth in the early universe.
+"""
+
+[[topics]]
+title = "High-Ionization Lines in Extremely Metal-Poor Galaxies"
+image = "img/empg.png"
+tags = ["Photoionization", "Local analogs"]
+paper = "https://ui.adsabs.harvard.edu/abs/2022ApJ...930...37U/abstract"
+text = """
+With photoionization modeling, I reconstruct the ionizing spectra of extremely metal-poor galaxies; a single self-consistent spectrum explains strong He II and other lines simultaneously.
+The spectra show two distinct shapes, naturally reproduced by stars plus X-ray sources — pointing to diverse ionizing sources and a negligible role of hard photons in reionization.
+"""

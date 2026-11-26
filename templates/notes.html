@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Notes · {{ config.title }}{% endblock title %}
+{% block content %}
+<section class="section page-head">
+  <div class="wrap narrow">
+    <h2 class="section-title">Notes</h2>
+    <p class="section-lead">{{ section.description }}</p>
+    {% if paginator.pages %}
+    <ul class="note-list">
+      {% for p in paginator.pages %}{{<note_card p={p} />}}{% endfor %}
+    </ul>
+    {% else %}
+    <p class="empty muted">No notes yet — the first one is still in the telescope queue. ✦</p>
+    {% endif %}
+    {% if paginator.number_pagers > 1 %}
+    <nav class="pager">
+      {% if paginator.previous %}<a href="{{ paginator.previous }}">← Newer</a>{% else %}<span></span>{% endif %}
+      <span class="muted">{{ paginator.current_index }} / {{ paginator.number_pagers }}</span>
+      {% if paginator.next %}<a href="{{ paginator.next }}">Older →</a>{% else %}<span></span>{% endif %}
+    </nav>
+    {% endif %}
+    {% set tags = get_taxonomy(kind="tags") %}
+    <p class="muted small">{% if tags.items %}Tags: {% for t in tags.items %}<a class="tag" href="{{ t.permalink }}">#{{ t.name }}</a> {% endfor %}
+      · {% endif %}<a href="{{ get_url(path='atom.xml') }}">Subscribe (Atom)</a></p>
+  </div>
+</section>
+{% endblock content %}

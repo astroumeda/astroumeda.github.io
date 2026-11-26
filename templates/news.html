@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}News · {{ config.title }}{% endblock title %}
+{% block content %}
+<section class="section page-head">
+  <div class="wrap narrow">
+    <h2 class="section-title">News</h2>
+    <p class="section-lead">Papers, talks, awards and other updates.</p>
+    <ul class="news-list">
+      {% for p in section.pages %}{{<news_item p={p} />}}{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock content %}
