@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} · {{ config.title }}{% endblock title %}
+{% block og_title %}{{ page.title }}{% endblock og_title %}
+{% block description %}{{ page.description or config.description }}{% endblock description %}
+{% block head %}
+  {% if page.extra?.math %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.querySelector('.prose'), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]})"></script>
+  {% endif %}
+{% endblock head %}
+{% block content %}
+<article class="section page-head">
+  <div class="wrap narrow">
+    <a class="back" href="{{ get_url(path='@/notes/_index.md') }}">← All notes</a>
+    <header class="note-head">
+      <h1>{{ page.title }}</h1>
+      <p class="muted">
+        <time datetime="{{ page.date }}">{{ page.date | date(format="%B %-d, %Y") }}</time>
+        · {{ page.reading_time }} min read
+        {% if page.taxonomies?.tags %}·{% for t in page.taxonomies.tags %} <a class="tag" href="{{ get_taxonomy_url(kind='tags', term=t) }}">#{{ t }}</a>{% endfor %}{% endif %}
+      </p>
+    </header>
+    <div class="prose note-prose">{{ page.content | safe }}</div>
+    <nav class="pager">
+      {% if page.lower %}<a href="{{ page.lower.permalink }}">← {{ page.lower.title }}</a>{% else %}<span></span>{% endif %}
+      {% if page.higher %}<a href="{{ page.higher.permalink }}">{{ page.higher.title }} →</a>{% else %}<span></span>{% endif %}
+    </nav>
+  </div>
+</article>
+{% endblock content %}

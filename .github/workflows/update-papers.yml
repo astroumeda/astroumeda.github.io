@@ -1,0 +1,47 @@
+# Once a month (or on demand), refresh data/papers.toml from NASA/ADS and redeploy.
+# One-time setup: Settings → Secrets and variables → Actions → New repository secret
+#   name: ADS_TOKEN   value: your token from https://ui.adsabs.harvard.edu/user/settings/token
+name: Update papers from ADS
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"   # 1st of every month, 09:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tools/site
+
+      - name: Sync papers
+        env:
+          ADS_TOKEN: ${{ secrets.ADS_TOKEN }}
+        run: |
+          if [ -z "$ADS_TOKEN" ]; then echo "ADS_TOKEN secret is not set; skipping."; exit 0; fi
+          cargo run --quiet --release --manifest-path tools/site/Cargo.toml -- papers sync
+
+      - name: Commit and redeploy if changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet data/papers.toml; then
+            echo "No new papers."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Update papers from NASA/ADS"
+          git push
+          # pushes made with GITHUB_TOKEN do not start other workflows, so start the deploy explicitly
+          gh workflow run deploy.yml --ref "${GITHUB_REF_NAME}"

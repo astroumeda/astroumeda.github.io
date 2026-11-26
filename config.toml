@@ -1,0 +1,45 @@
+base_url = "https://astroumeda.github.io"
+title = "Hiroya Umeda"
+description = "Hiroya Umeda (梅田滉也) — astronomer studying cosmic reionization and galaxy / black hole formation using big data from JWST, Subaru and VLT, statistical inference, simulations and theoretical models."
+default_language = "en"
+author = "Hiroya Umeda"
+
+compile_sass = true
+minify_html = true
+build_search_index = false
+
+# Atom feed of News + Notes at /atom.xml
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+
+taxonomies = [
+  { name = "tags", feed = true },
+]
+
+[markdown]
+smart_punctuation = true
+external_links_target_blank = true
+external_links_no_referrer = true
+
+[markdown.highlighting]
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[extra]
+name = "Hiroya Umeda"
+name_ja = "梅田滉也"
+position = "Postdoctoral Researcher"
+affiliation = "Center for Computational Sciences, University of Tsukuba"
+google_site_verification = "KSkNcxf-4tzEykt_XeFMj_6SC9Ite2rCw2NaizZrrdY"
+
+# Shown as buttons under the name. Remove or add entries freely.
+links = [
+  { label = "NASA/ADS", url = "https://ui.adsabs.harvard.edu/search/q=author%3A%22Umeda%2C%20Hiroya%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" },
+  { label = "GitHub", url = "https://github.com/astroumeda" },
+  { label = "CV (PDF)", url = "/assets/pdf/CV_Umeda.pdf" },
+]
+
+# Written with "_at_" so that simple spam crawlers do not pick it up.
+email = "ume_at_icrr.u-tokyo.ac.jp"
+address = "2nd Floor, CCS, University of Tsukuba, 1-1-1 Tennodai, Tsukuba, Ibaraki 305-0006, Japan"
+map_url = "https://www.google.com/maps/search/?api=1&query=Center+for+Computational+Sciences+University+of+Tsukuba"

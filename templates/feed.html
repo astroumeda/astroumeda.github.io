@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Subscribe · {{ config.title }}{% endblock title %}
+{% block content %}
+{% set feed = get_url(path='atom.xml') %}
+<section class="section page-head">
+  <div class="wrap narrow">
+    <p class="eyebrow">Feed</p>
+    <h2>Subscribe to News &amp; Notes</h2>
+    <p class="section-lead">New posts on this site are published as an Atom feed.
+      Add this address to a feed reader (Feedly, Inoreader, NetNewsWire, Thunderbird, …)
+      and new News items and Notes will show up there automatically.</p>
+    <p class="email-row">
+      <code class="mono feed-url">{{ feed }}</code>
+      <button class="copy-btn" type="button" data-copy="{{ feed }}" hidden>Copy</button>
+    </p>
+    <p class="muted small">Opening the feed address directly in a browser shows raw XML — that's normal; it's meant for feed readers.
+      Want only one topic? Each tag has its own feed at <span class="mono">/tags/&lt;tag&gt;/atom.xml</span>.</p>
+    <p class="link-row">
+      <a class="pill" href="{{ get_url(path='@/news/_index.md') }}">News</a>
+      <a class="pill" href="{{ get_url(path='@/notes/_index.md') }}">Notes</a>
+    </p>
+  </div>
+</section>
+{% endblock content %}

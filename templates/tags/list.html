@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Tags · {{ config.title }}{% endblock title %}
+{% block content %}
+<section class="section page-head">
+  <div class="wrap narrow">
+    <a class="back" href="{{ get_url(path='@/notes/_index.md') }}">← All notes</a>
+    <h2 class="section-title">Tags</h2>
+    <p>{% for t in terms %}<a class="tag tag-lg" href="{{ t.permalink }}">#{{ t.name }} <span class="muted">{{ t.page_count }}</span></a> {% endfor %}</p>
+  </div>
+</section>
+{% endblock content %}
